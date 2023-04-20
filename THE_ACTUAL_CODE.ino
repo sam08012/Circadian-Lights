@@ -15,8 +15,6 @@
 #define TIME_HEADER  "T"   // Header tag for serial time sync message
 #define TIME_REQUEST  7    // ASCII bell character requests a time sync message 
 
-////////////////////////////
-
 int sensorPin = A0; // Connect sensor to analog pin A0
 int ledPin = 9; // Connect LED to digital pin 9
 
@@ -70,38 +68,10 @@ if (timeInSeconds >= startTime && timeInSeconds < peakStart) { // Before peak
   }
   else if (timeInSeconds >= endTime) { // Turn off LED at 7pm
     lightIntensity = 0;
-  } //////////////////////////////////////////////////////////////
-/////////////////////////////////////////  ////////////////////////
+  }
+  
+  
 
-
- /* int sensorValue = analogRead(sensorPin); // Read sensor value
-  float voltage = sensorValue * (5.0 / 1023.0); // Convert sensor value to voltage
-  float lux = voltage * 100; // Convert voltage to lux (calibration factor is 100)
-  
-  Serial.print("Current time: ");
-  Serial.print(hour_var);
-  Serial.print(":");
-  Serial.print(minute_var);
-  Serial.print(":");
-  Serial.println(second_var);
-  
-  Serial.print("Light intensity: ");
-  Serial.println(lightIntensity);
-  
-  Serial.print("Ambient light level: ");
-  Serial.print(lux);
-  Serial.println(" lux");
-  
-  */
-  /////////////////////////////////////
-  ///////////////////////////////////////
-  
-  
-  
-  
-  
-  
-  
   analogWrite(ledPin, lightIntensity);
   delay(1000);
 }
